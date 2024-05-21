@@ -17,7 +17,20 @@ const HelloWorld = ({classes})  => {
         status: true,
         title: "Title HelloWorld"
     };
+
+    const KeyObj = Object.keys(obj),
+    valueOjb = Object.values(obj);
     const list = ["1", "2","3"];
+    /**
+    * Doc string
+    *
+    */
+    const setList = (list) => {
+        const newList = list.map(item => item * 2);
+        console.log(newList);
+    }
+    setList(list);
+
     /**
     * Doc string
     *
@@ -28,6 +41,13 @@ const HelloWorld = ({classes})  => {
 
     return (
         <>
+        {Object.entries(obj).map(([key, value], index) => (
+        <React.Fragment key={key}>
+            <div>Key: {key}</div>
+            <div>Value: {value}</div>
+            <div>Index: {index}</div>
+        </React.Fragment>
+        ))}
             <Title
                 title={obj.title}
             />
