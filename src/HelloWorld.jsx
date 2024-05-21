@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import Switch from "@mui/material/Switch";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Title = ({title}) => {
     return (
@@ -12,11 +14,16 @@ const Title = ({title}) => {
 
 const HelloWorld = ({classes})  => {
     const [subTitle, setSubTitle] = useState("HelloWorld");
+    const [checked, setChecked] = useState(true);
     const obj = {
         key: "hello-id",
         status: true,
         title: "Title HelloWorld"
     };
+
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    }
 
     const KeyObj = Object.keys(obj),
     valueOjb = Object.values(obj);
@@ -55,6 +62,12 @@ const HelloWorld = ({classes})  => {
             <button onClick={(event) => setSubHeader(event)}>
                 Click
             </button>
+            <Switch
+              checked={checked}
+              onChange={handleChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            <ArrowForwardIcon/>
         </>
     )
 };
