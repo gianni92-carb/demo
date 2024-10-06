@@ -6,7 +6,8 @@ const array = [1,2,3,4,5];
 const styles = {
     container: {
         display: "flex",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
+        padding: "10px"
     }
 };
 
@@ -52,15 +53,15 @@ const manipulateArrowArray = (arr) => {
 
     return (
         <>
-            <div>
+            <div style={{padding: "10px"}}>
                 {`${name} PIPPO3`}
             </div>
             <div style={styles.container}>
                 <button onClick={() => manipulateFunctionArray(array)}>
-                    CLICK FUNCTION
+                    CLICK FUNCTION ARRAY
                 </button>
                 <button onClick={() => manipulateArrowArray(array)}>
-                    CLICK ARROW
+                    CLICK ARROW ARRRAY
                 </button>
             </div>
         </>
@@ -68,4 +69,3 @@ const manipulateArrowArray = (arr) => {
 }
 
 export default Demo;
-
