@@ -2,13 +2,13 @@ import React from 'react';
 
 const obj1 = {
     name: "MARIO",
-    age: "30",
+    age: 30,
     city: "ROMA"
 }
 
 const obj2 = {
     name: "M.JAKSON",
-    age: "45",
+    age: 45,
     city: "LATINA"
 }
 
@@ -64,6 +64,21 @@ const setArrowObj = (obj1, obj2) => {
 }
 
 const Demo2 = ({name}) => {
+    const list = [obj1,obj2];
+    const filtered = list.filter(item => item.name === "MARIO" );
+    console.log(list);
+        console.log(filtered);
+    let acc = 0; // Assicurati di inizializzare acc a 0
+    list.forEach(item => {
+        acc += item.age; // Usa += per sommare il valore di item.age a acc
+    });
+    console.log(acc);
+
+    const totalAge = list.reduce((acc, item) => {
+        console.log(acc + item.age);
+        console.log("totalAge");
+        return acc + item.age;
+    },0)
     return (
         <>
             <div style={{padding: "10px"}}>
@@ -77,8 +92,9 @@ const Demo2 = ({name}) => {
                     ARROW OBJECT
                 </button>
                 {Object.entries(obj1).map(([key, value]) => (
-                    <div>
-                        {key}
+                    <div key={key}>
+                        {key} <br/>
+                        {value}
                     </div>
                 ))}
             </div>

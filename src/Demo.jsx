@@ -20,6 +20,8 @@ function manipulateFunctionArray(arr) {
     console.log(arr);
     arr.pop();
     console.log(arr);
+    const filtered = arr.filter(item => item === 2);
+    console.log(filtered);
     return (
         console.log("FUNCTION")
     );
