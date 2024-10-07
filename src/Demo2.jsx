@@ -68,9 +68,9 @@ const Demo2 = ({name}) => {
     const filtered = list.filter(item => item.name === "MARIO" );
     console.log(list);
         console.log(filtered);
-    let acc = 0; // Assicurati di inizializzare acc a 0
+    let acc = 0;
     list.forEach(item => {
-        acc += item.age; // Usa += per sommare il valore di item.age a acc
+        acc += item.age;
     });
     console.log(acc);
 
